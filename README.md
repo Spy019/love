@@ -5,7 +5,7 @@
     <style type="text/css">
         #main {
             text-align: center;
-            padding-top: 50px;
+            padding-top: 100px;
         }
         #reject {
             position: relative;
