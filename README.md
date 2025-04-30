@@ -1,7 +1,7 @@
 <html lang="th">
 <head>
     <meta charset="utf-8">
-    <title>ขอตัง1000</title>
+    <title>ขอตัง</title>
     <style type="text/css">
         #main {
             text-align: center;
