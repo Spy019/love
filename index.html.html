@@ -3,44 +3,118 @@
 <head>
     <meta charset="utf-8">
     <title>ขอตังหน่อย1000</title>
-    <style type="text/css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #fdfbfb, #ebedee);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         #main {
             text-align: center;
-            padding-top: 50px;
+            background: white;
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
+
+        h1 {
+            font-size: 2.2rem;
+            color: #444;
+            margin-bottom: 40px;
+        }
+
+        button {
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 12px;
+            margin: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #accept {
+            background-color: #a0d8b3;
+            color: #fff;
+        }
+
+        #accept:hover {
+            background-color: #8ccaa1;
+        }
+
         #reject {
+            background-color: #f8bcbc;
+            color: #fff;
             position: relative;
-            left: 0;
-            top: 0;
-            transition: all .1s ease-in-out;
+        }
+
+        #reject:hover {
+            background-color: #f4a7a7;
+        }
+
+        .money {
+            position: fixed;
+            top: -50px;
+            font-size: 30px;
+            animation: drop 3s linear forwards;
+            pointer-events: none;
+        }
+
+        @keyframes drop {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
         }
     </style>
 </head>
 <body>
     <div id="main">
-        <h1>ขอตังหน่อย1000 :D</h1>
-        <button id="accept">ให้</button>
-        <button id="reject">ไม่ให้</button>
+        <h1>ขอตังหน่อย 1000 บาท 🥺</h1>
+        <button id="accept">ให้ก็ได้</button>
+        <button id="reject">ไม่เอา!</button>
     </div>
 
-    <script type="text/javascript">
-        // ปุ่ม "รัก"
-        document.getElementById("accept").addEventListener("click", function(event) {
-            alert('ขอบคุณคร้าบบ :D');
+    <script>
+        document.getElementById("accept").addEventListener("click", function () {
+            alert('ขอบคุณนะครับบบบ 💚');
+
+            const interval = setInterval(() => {
+                for (let i = 0; i < 5; i++) {
+                    createMoney();
+                }
+            }, 200);
+
+            setTimeout(() => {
+                clearInterval(interval);
+            }, 5000);
         });
 
-        // ปุ่ม "ไม่รัก"
-        document.getElementById("reject").addEventListener("mouseover", function(event) {
-            var random_x = randomNumber(0, 300);
-            var random_y = randomNumber(0, 300);
-
+        document.getElementById("reject").addEventListener("mouseover", function () {
+            var random_x = Math.random() * (window.innerWidth - 100);
+            var random_y = Math.random() * (window.innerHeight - 100);
+            this.style.position = "absolute";
             this.style.left = random_x + "px";
             this.style.top = random_y + "px";
         });
 
-        // ฟังก์ชันสุ่มตัวเลข
-        function randomNumber(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
+        function createMoney() {
+            const money = document.createElement("div");
+            money.classList.add("money");
+            money.textContent = "💸";
+            money.style.left = Math.random() * window.innerWidth + "px";
+            document.body.appendChild(money);
+
+            setTimeout(() => {
+                money.remove();
+            }, 3000);
         }
     </script>
 </body>
