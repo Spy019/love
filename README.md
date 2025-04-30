@@ -1,7 +1,7 @@
 <html lang="th">
 <head>
     <meta charset="utf-8">
-    <title>รักเค้ามั้ย</title>
+    <title>ขอตัง1000</title>
     <style type="text/css">
         #main {
             text-align: center;
@@ -17,15 +17,15 @@
 </head>
 <body>
     <div id="main">
-        <h1>รักเค้ามั้ย :D</h1>
-        <button id="accept">รัก</button>
-        <button id="reject">ไม่รัก</button>
+        <h1>ขอตัง1000 :D</h1>
+        <button id="accept">ให้</button>
+        <button id="reject">ไม่ให้</button>
     </div>
 
     <script type="text/javascript">
         // ปุ่ม "รัก"
         document.getElementById("accept").addEventListener("click", function(event) {
-            alert('เย้เธอรักเค้าที่สุด :D');
+            alert('ขอบคุณคร้าบบ :D');
         });
 
         // ปุ่ม "ไม่รัก"
